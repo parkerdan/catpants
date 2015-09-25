@@ -10,14 +10,14 @@ Gem::Specification.new do |spec|
   spec.email         = ["parker.daniel.o@gmail.com"]
 
   spec.summary       =  "Checks passwords strength on key up"
-  spec.description   =  "Just add class to the password labe and boom...password strength checker and emoji's ;) "
+  spec.description   =  "Just add the class 'catpants' to the password label and boom...password strength checker and emoji's ;) "
   spec.homepage      = "http://github.com/parkerdan/catpants"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
   # delete this section to allow pushing this gem to any host.
   if spec.respond_to?(:metadata)
-    spec.metadata['allowed_push_host'] = " Set to 'http://mygemserver.com'"
+    spec.metadata['allowed_push_host'] = "https://rubygems.org"
   else
     raise "RubyGems 2.0 or newer is required to protect against public gem pushes."
   end
