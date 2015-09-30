@@ -17,23 +17,27 @@ $ bundle
 ```
 Or install it yourself as:
 ```ruby
-    $ gem install catpants
+$ gem install catpants
 ```
 ## Usage
 
 You need to require this in app.js below jquery
 Either disable turbolinks or get the jquery turbolinks gem and require it as well.
-
+```ruby
 //= require jquery
 //= require jquery.turbolinks
 //= require catpants
-
+```
 
 You must have a html label element for the password field.
 
 Simply add the class "catpants" to the label for your password form.
 
-Simple form option like this   <%= f.input :password, label_html: { class: 'catpants' }  %>
+Simple form option like this   
+```ruby
+f.input :password, label_html: { class: 'catpants' }
+
+```
 
 Boom. Done.
 
