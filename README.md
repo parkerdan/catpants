@@ -1,6 +1,7 @@
 # Catpants
 
-Password strength calculator on key up...with a cat emoji if your password is good enough!
+Password strength calculator on key up...with a cat emoji if your password is good enough.
+Everyone needs a strength calculator, everyone loves emoji's.  Win win here!
 
 ## Installation
 
@@ -11,19 +12,20 @@ gem 'catpants'
 ```
 
 And then execute:
-
-    $ bundle
-
+```ruby
+$ bundle
+```
 Or install it yourself as:
-
+```ruby
     $ gem install catpants
-
+```
 ## Usage
 
-You need to require this in app.js BELOW jquery
+You need to require this in app.js below jquery
+Either disable turbolinks or get the jquery turbolinks gem and require it as well.
 
 //= require jquery
-
+//= require jquery.turbolinks
 //= require catpants
 
 
