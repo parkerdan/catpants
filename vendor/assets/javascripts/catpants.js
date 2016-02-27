@@ -1,40 +1,40 @@
 function strength(chars) {
 
-   cOUntEr = 0
+   COUNTER = 0
   var blackList = ["password", "12345", "admin","master","11111","god", "supersecret"]
     if (chars.length > 7) {
-      cOUntEr ++  }
+      COUNTER ++  }
     if (/[a-z]/.test(chars) === true) {
-      cOUntEr ++  }
+      COUNTER ++  }
     if (/[A-Z]/.test(chars) === true) {
-      cOUntEr ++  }
+      COUNTER ++  }
     if (/[^a-zA-Z\d\s:]/.test(chars) === true) {
-      cOUntEr ++  }
+      COUNTER ++  }
     if (chars.length > 13) {
-      cOUntEr ++  }
+      COUNTER ++  }
     if (blackList.indexOf(chars.toLowerCase()) >= 0 ) {
-      cOUntEr = -1}
+      COUNTER = -1}
 
-  switch (cOUntEr) {
-    case cOUntEr = 0:
+  switch (COUNTER) {
+    case COUNTER = 0:
        return "Your password strength is not good... 😕"
       break;
-     case cOUntEr = 1:
+     case COUNTER = 1:
        return "It is slowly getting better 😐"
        break;
-     case cOUntEr = 2:
+     case COUNTER = 2:
        return "Keep going!  😏"
        break;
-     case cOUntEr = 3:
+     case COUNTER = 3:
        return "Almost a good password  😳"
        break;
-     case cOUntEr = 4:
+     case COUNTER = 4:
        return "Mine is usually this good  😊"
        break;
-     case cOUntEr = 5:
+     case COUNTER = 5:
        return "I doubt anyone will ever guess this one  😻"
        break;
-     case cOUntEr = -1:
+     case COUNTER = -1:
        return "Very funny...try harder!  Is this Tam?  🙀"
        break;
     default: return "Something"
@@ -45,16 +45,16 @@ $(document).ready(function(){
   $(".catpants").after("<p id='cat-message'>Your password strength is not good... 😕</p>");
   $("#cat-message").css({
     'color' : 'red',
-    'transition' : 'color 2s'
+    'transition' : 'color 3s'
   });
 
-  $(".catpants").siblings('input').on("keyup", function(){
+  $(".catpants").on("keyup", function(){
             $("#cat-message").html(strength($(this).val()));
 
-            if ( cOUntEr >= 4 ) {
+            if ( COUNTER >= 4 ) {
                 $("#cat-message").css("color","green");
             }
-            if ( cOUntEr < 4 ) {
+            if ( COUNTER < 4 ) {
                 $("#cat-message").css("color","red");
             }
     });
