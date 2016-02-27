@@ -1,6 +1,6 @@
 function strength(chars) {
 
-   COUNTER = 0
+    COUNTER = 0
   var blackList = ["password", "12345", "admin","master","11111","god", "supersecret"]
     if (chars.length > 7) {
       COUNTER ++  }
@@ -41,21 +41,29 @@ function strength(chars) {
   }
 };
 
-$(document).ready(function(){
-  $(".catpants").after("<p id='cat-message'>Your password strength is not good... 😕</p>");
-  $("#cat-message").css({
-    'color' : 'red',
-    'transition' : 'color 3s'
-  });
+document.addEventListener("DOMContentLoaded", function(){
 
-  $(".catpants").on("keyup", function(){
-            $("#cat-message").html(strength($(this).val()));
+  var para = document.createElement("p");
+  para.setAttribute("id","cat-message");
+  var node = document.createTextNode("Your password strength is not good... 😕");
+  para.appendChild(node);
 
-            if ( COUNTER >= 4 ) {
-                $("#cat-message").css("color","green");
-            }
-            if ( COUNTER < 4 ) {
-                $("#cat-message").css("color","red");
-            }
-    });
+
+  document.getElementById("catpants").appendChild(para);
+  document.getElementById("cat-message").style.color="red";
+  document.getElementById("cat-message").style.transition="color 2s";
+
+  document.getElementById("password").onkeyup = function(event){
+    event = event || window.event;
+    var pw = document.getElementById("password").value;
+
+    document.getElementById("cat-message").innerHTML= strength(pw);
+
+    if ( COUNTER >= 4 ) {
+        document.getElementById("cat-message").style.color="green";
+    }
+    if ( COUNTER < 4 ) {
+        document.getElementById("cat-message").style.color="red";
+    }
+  }
 });

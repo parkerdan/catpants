@@ -1,7 +1,7 @@
 # Catpants
 
 Password strength calculator on key up...with a cat emoji if your password is good enough.
-Everyone needs a strength calculator, everyone loves emoji's.  Win win here!
+Everyone needs a strength calculator, everyone loves emoji's.  Win win here!  No longer relies on jQuery.
 
 ## Installation
 
@@ -21,22 +21,25 @@ $ gem install catpants
 ```
 ## Usage
 
-You need to require this in app.js below jquery
-Either disable turbolinks or get the jquery turbolinks gem and require it as well.
+You need to require this in app.js
 ```ruby
-//= require jquery
-//= require jquery.turbolinks
 //= require catpants
 ```
 
-You must have a html label element for the password field.
-
-Simply add the class "catpants" to the label for your password form.
-
-Simple form option like this   
-```ruby
-f.input :password, label_html: { class: 'catpants' }
-
+You must have a html label element for the password field with id of catpants.
+```html
+<label id="catpants" for="password">
+```
+and an id of password on the password input
+```html
+<input type="password" name="password" id="password" value="" class="form-control">
+```
+Here's a simple RAILS example
+```html
+<div class="form-group">
+  <%= label_tag :password, "Password",id:"catpants" %>
+  <%= password_field_tag :password, "", class: "form-control" %>
+</div>
 ```
 
 Boom. Done.
