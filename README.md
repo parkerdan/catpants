@@ -1,24 +1,21 @@
 # Catpants
 
 Password strength calculator on key up...with a cat emoji if your password is good enough.
-Everyone needs a strength calculator, everyone loves emoji's.  Win win here!  No longer relies on jQuery.
+Everyone needs a strength calculator, everyone loves emoji's.  Win win here!  No longer relies on jQuery, vanilla javascript meow 😻!
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'catpants'
+gem 'catpants', '~> 2.0'
 ```
 
 And then execute:
 ```ruby
 $ bundle
 ```
-Or install it yourself as:
-```ruby
-$ gem install catpants
-```
+
 ## Usage
 
 You need to require this in app.js

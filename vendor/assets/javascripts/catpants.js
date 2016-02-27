@@ -1,3 +1,4 @@
+
 function strength(chars) {
 
     COUNTER = 0
@@ -17,25 +18,32 @@ function strength(chars) {
 
   switch (COUNTER) {
     case COUNTER = 0:
-       return "Your password strength is not good... 😕"
+       return {sentence:"Your password strength is not good...  ",
+               emoji: String.fromCharCode(0xD83D, 0xDE1E)}
       break;
      case COUNTER = 1:
-       return "It is slowly getting better 😐"
+       return {sentence:"It is slowly getting better  ",
+               emoji: String.fromCharCode(0xD83D, 0xDE0F)}
        break;
      case COUNTER = 2:
-       return "Keep going!  😏"
+       return {sentence:"Keep going  ",
+               emoji: String.fromCharCode(0xD83D, 0xDE40)}
        break;
      case COUNTER = 3:
-       return "Almost a good password  😳"
+       return {sentence:"Almost a good password  ",
+               emoji: String.fromCharCode(0xD83D, 0xDE01)}
        break;
      case COUNTER = 4:
-       return "Mine is usually this good  😊"
+       return {sentence:"Mine is usually this good  ",
+               emoji: String.fromCharCode(0xD83D, 0xDE0A) + String.fromCharCode(0xD83D, 0xDE18)}
        break;
      case COUNTER = 5:
-       return "I doubt anyone will ever guess this one  😻"
+       return {sentence:"I doubt anyone will guess this  ",
+               emoji: String.fromCharCode(0xD83D, 0xDE3B) + String.fromCharCode(0xD83D, 0xDE3D)}
        break;
      case COUNTER = -1:
-       return "Very funny...try harder!  Is this Tam?  🙀"
+       return {sentence:"Very funny....is this Tam?  ",
+               emoji: String.fromCharCode(0xD83D, 0xDE1C) + String.fromCharCode(0xD83D, 0xDE1D)}
        break;
     default: return "Something"
   }
@@ -45,19 +53,21 @@ document.addEventListener("DOMContentLoaded", function(){
 
   var para = document.createElement("p");
   para.setAttribute("id","cat-message");
-  var node = document.createTextNode("Your password strength is not good... 😕");
+  var node = document.createTextNode("");
   para.appendChild(node);
-
-
   document.getElementById("catpants").appendChild(para);
+
   document.getElementById("cat-message").style.color="red";
   document.getElementById("cat-message").style.transition="color 2s";
+  document.getElementById("cat-message").innerHTML = "Your password strength is not good... <span id='emoji' style='color:black;font-weight:normal;'>" + String.fromCharCode(0xD83D, 0xDE1E) + "</span>" ;
+
 
   document.getElementById("password").onkeyup = function(event){
     event = event || window.event;
     var pw = document.getElementById("password").value;
+    var responseObject = strength(pw);
 
-    document.getElementById("cat-message").innerHTML= strength(pw);
+    document.getElementById("cat-message").innerHTML= responseObject.sentence + "<span id='emoji' style='color:black;font-weight:normal;'>" + responseObject.emoji + "</span>";
 
     if ( COUNTER >= 4 ) {
         document.getElementById("cat-message").style.color="green";
