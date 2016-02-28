@@ -54,26 +54,27 @@ function strength(chars) {
   }
 };
 
-document.addEventListener("DOMContentLoaded", function(){
+document.addEventListener("page:change", function(){
+  if (document.getElementById("catpants")) {
+    var para = document.createElement("p");
+    para.setAttribute("id","cat-message");
+    var node = document.createTextNode("");
+    para.appendChild(node);
+    document.getElementById("catpants").appendChild(para);
 
-  var para = document.createElement("p");
-  para.setAttribute("id","cat-message");
-  var node = document.createTextNode("");
-  para.appendChild(node);
-  document.getElementById("catpants").appendChild(para);
-
-  document.getElementById("cat-message").style.color="red";
-  document.getElementById("cat-message").style.transition="color 2s";
-  document.getElementById("cat-message").innerHTML = "Your password strength is not good... <span id='emoji' style='color:black;font-weight:normal;'>" + String.fromCharCode(0xD83D, 0xDE1E) + "</span>" ;
+    document.getElementById("cat-message").style.color="red";
+    document.getElementById("cat-message").style.transition="color 2s";
+    document.getElementById("cat-message").innerHTML = "Your password strength is not good... <span id='emoji' style='color:black;font-weight:normal;'>" + String.fromCharCode(0xD83D, 0xDE1E) + "</span>" ;
 
 
-  document.getElementById("password").onkeyup = function(event){
-    event = event || window.event;
-    var pw = document.getElementById("password").value;
-    var responseObject = strength(pw);
+    document.getElementById("password").onkeyup = function(event){
+      event = event || window.event;
+      var pw = document.getElementById("password").value;
+      var responseObject = strength(pw);
 
-    document.getElementById("cat-message").innerHTML= responseObject.sentence + "<span id='emoji' style='color:black;font-weight:normal;'>" + responseObject.emoji + "</span>";
-    document.getElementById("cat-message").style.color=responseObject.color;
+      document.getElementById("cat-message").innerHTML= responseObject.sentence + "<span id='emoji' style='color:black;font-weight:normal;'>" + responseObject.emoji + "</span>";
+      document.getElementById("cat-message").style.color=responseObject.color;
+    }
   }
 });
 //  bundle exec rake release
