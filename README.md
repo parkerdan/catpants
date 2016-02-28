@@ -38,6 +38,11 @@ Here's a simple RAILS example
   <%= password_field_tag :password, "", class: "form-control" %>
 </div>
 ```
+Simple Form example
+```ruby
+
+
+
 
 Boom. Done.
 
