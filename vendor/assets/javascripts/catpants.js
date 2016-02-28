@@ -76,3 +76,4 @@ document.addEventListener("DOMContentLoaded", function(){
     document.getElementById("cat-message").style.color=responseObject.color;
   }
 });
+//  bundle exec rake release
