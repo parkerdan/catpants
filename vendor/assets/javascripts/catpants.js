@@ -1,7 +1,5 @@
-
 function strength(chars) {
-
-    COUNTER = 0
+  var COUNTER = 0
   var blackList = ["password", "12345", "admin","master","11111","god", "supersecret"]
     if (chars.length > 7) {
       COUNTER ++  }
@@ -19,31 +17,38 @@ function strength(chars) {
   switch (COUNTER) {
     case COUNTER = 0:
        return {sentence:"Your password strength is not good...  ",
-               emoji: String.fromCharCode(0xD83D, 0xDE1E)}
+               emoji: String.fromCharCode(0xD83D, 0xDE1E),
+               color: 'red'}
       break;
      case COUNTER = 1:
        return {sentence:"It is slowly getting better  ",
-               emoji: String.fromCharCode(0xD83D, 0xDE0F)}
+               emoji: String.fromCharCode(0xD83D, 0xDE0F),
+               color:'red'}
        break;
      case COUNTER = 2:
        return {sentence:"Keep going  ",
-               emoji: String.fromCharCode(0xD83D, 0xDE40)}
+               emoji: String.fromCharCode(0xD83D, 0xDE40),
+               color: 'orange'}
        break;
      case COUNTER = 3:
        return {sentence:"Almost a good password  ",
-               emoji: String.fromCharCode(0xD83D, 0xDE01)}
+               emoji: String.fromCharCode(0xD83D, 0xDE01),
+               color: 'orange'}
        break;
      case COUNTER = 4:
        return {sentence:"Mine is usually this good  ",
-               emoji: String.fromCharCode(0xD83D, 0xDE0A) + String.fromCharCode(0xD83D, 0xDE18)}
+               emoji: String.fromCharCode(0xD83D, 0xDE0A) + String.fromCharCode(0xD83D, 0xDE18),
+               color: 'green'}
        break;
      case COUNTER = 5:
        return {sentence:"I doubt anyone will guess this  ",
-               emoji: String.fromCharCode(0xD83D, 0xDE3B) + String.fromCharCode(0xD83D, 0xDE3D)}
+               emoji: String.fromCharCode(0xD83D, 0xDE3B) + String.fromCharCode(0xD83D, 0xDE3D),
+               color: 'green'}
        break;
      case COUNTER = -1:
        return {sentence:"Very funny....is this Tam?  ",
-               emoji: String.fromCharCode(0xD83D, 0xDE1C) + String.fromCharCode(0xD83D, 0xDE1D)}
+               emoji: String.fromCharCode(0xD83D, 0xDE1C) + String.fromCharCode(0xD83D, 0xDE1D),
+               color: 'blue'}
        break;
     default: return "Something"
   }
@@ -68,12 +73,6 @@ document.addEventListener("DOMContentLoaded", function(){
     var responseObject = strength(pw);
 
     document.getElementById("cat-message").innerHTML= responseObject.sentence + "<span id='emoji' style='color:black;font-weight:normal;'>" + responseObject.emoji + "</span>";
-
-    if ( COUNTER >= 4 ) {
-        document.getElementById("cat-message").style.color="green";
-    }
-    if ( COUNTER < 4 ) {
-        document.getElementById("cat-message").style.color="red";
-    }
+    document.getElementById("cat-message").style.color=responseObject.color;
   }
 });
