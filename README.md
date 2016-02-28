@@ -31,16 +31,17 @@ and an id of password on the password input
 ```html
 <input type="password" name="password" id="password" value="" class="form-control">
 ```
-Here's a simple RAILS example
+Here's a RAILS example with form helpers
 ```html
 <div class="form-group">
-  <%= label_tag :password, "Password",id:"catpants" %>
+  <%= label_tag :password, "Password", id:"catpants" %>
   <%= password_field_tag :password, "", class: "form-control" %>
 </div>
 ```
-Simple Form example
-```ruby
-
+RAILS with Simple Form example
+```html
+<%= f.input :password, label_html: { id: 'catpants' }, input_html: {id:'password'} %>
+```
 
 
 
