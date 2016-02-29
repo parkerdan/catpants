@@ -3,12 +3,15 @@
 Password strength calculator on key up...with a cat emoji if your password is good enough.
 Everyone needs a strength calculator, everyone loves emoji's.  Win win here!  No longer relies on jQuery, vanilla javascript meow 😻!
 
+
+
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'catpants', '~> 2.1.2'
+gem 'catpants', '~> 2.1.2' if you have turbolinks enabled
+gem 'catpants', '~> 2.1.1' if you have turbolinks DISABLED
 ```
 
 And then execute:

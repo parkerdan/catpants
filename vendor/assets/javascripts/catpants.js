@@ -54,7 +54,7 @@ function strength(chars) {
   }
 };
 
-document.addEventListener("page:change", function(){
+document.addEventListener("DOMContentLoaded", function(){
   if (document.getElementById("catpants")) {
     var para = document.createElement("p");
     para.setAttribute("id","cat-message");
