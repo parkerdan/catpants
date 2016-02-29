@@ -11,7 +11,7 @@ Add this line to your application's Gemfile:
 
 ```ruby
 gem 'catpants', '~> 2.1.2' if you have turbolinks enabled
-gem 'catpants', '~> 2.1.1' if you have turbolinks DISABLED
+gem 'catpants', '~> 2.1.05' if you have turbolinks DISABLED
 ```
 
 And then execute:
