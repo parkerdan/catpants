@@ -7,9 +7,11 @@ Everyone needs a strength calculator, everyone loves emoji's.  Win win here!  No
 
 Add this line to your application's Gemfile:
 
+### Specify EXACT version based on use of Turbolinks!!
+
 ```ruby
-gem 'catpants', '~> 2.1.2' if you have turbolinks enabled
-gem 'catpants', '~> 2.1.05' if you have turbolinks DISABLED
+gem 'catpants', '2.1.2' if you have turbolinks enabled
+gem 'catpants', '2.1.05' if you have turbolinks DISABLED
 ```
 
 And then execute:
