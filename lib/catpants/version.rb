@@ -1,3 +1,3 @@
 module Catpants
-  VERSION = "2.1.05"
+  VERSION = "2.1.3"
 end
