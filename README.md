@@ -9,14 +9,13 @@ I believe both versions are in good working order if you follow the instructions
 
 Add this line to your application's Gemfile:
 
-### **** Specify EXACT version based on use of Turbolinks!! ****
+### **** Specify gem version  ****
 
 ```ruby
-gem 'catpants', '2.1.4' if you have turbolinks enabled
-gem 'catpants', '2.1.3' if you have turbolinks DISABLED
+gem 'catpants', '2.2.0'
 ```
 
-And then execute:
+And execute:
 ```ruby
 $ bundle
 ```
@@ -44,7 +43,7 @@ Here's a RAILS example with form helpers
 </div>
 ```
 RAILS with Simple Form example
-```html
+```erb
 <%= f.input :password, label_html: { id: 'catpants' }, input_html: {id:'password'} %>
 ```
 
