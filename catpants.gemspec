@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["parker.daniel.o@gmail.com"]
 
   spec.summary       =  "Checks passwords strength on key up, vanilla javascript"
-  spec.description   =  "Just add the class 'catpants' to the password label and id of 'password' to the input and BOOM...password strength checker with emoji's ;) "
+  spec.description   =  "Just add the class 'catpants' to the password label and class of 'password' to the input and BOOM...password strength checker with emoji's ;) "
   spec.homepage      = "http://github.com/parkerdan/catpants"
   spec.license       = "MIT"
 

@@ -1,9 +1,7 @@
 # Catpants
 
 Password strength calculator on key up...with a cat emoji if your password is good enough.
-Everyone needs a strength calculator, everyone loves emoji's.  Win win here!  No longer relies on jQuery, vanilla javascript meow 😻!
-
-I believe both versions are in good working order if you follow the instructions laid out below.  If you encounter any errors, please notify me but be certain your usage is in accordance with the documentaion below.
+Everyone needs a strength calculator, everyone loves emoji's.  Win win here!  Vanilla javascript meow 😻!
 
 ## Installation
 
