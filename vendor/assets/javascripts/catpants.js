@@ -37,47 +37,58 @@ function strength(chars) {
        break;
      case counter = 4:
        return {sentence:"Mine is usually this good  ",
-               emoji: String.fromCharCode(0xD83D, 0xDE0A) + String.fromCharCode(0xD83D, 0xDE18),
+               emoji: String.fromCharCode(0xD83D, 0xDE0A) + " " + String.fromCharCode(0xD83D, 0xDE18),
                color: 'green'}
        break;
      case counter = 5:
        return {sentence:"I doubt anyone will guess this  ",
-               emoji: String.fromCharCode(0xD83D, 0xDE3B) + String.fromCharCode(0xD83D, 0xDE3D),
+               emoji: String.fromCharCode(0xD83D, 0xDE3B) + " " +  String.fromCharCode(0xD83D, 0xDE3D),
                color: 'green'}
        break;
      case counter = -1:
        return {sentence:"Very funny....is this Tam?  ",
-               emoji: String.fromCharCode(0xD83D, 0xDE1C) + String.fromCharCode(0xD83D, 0xDE1D),
+               emoji: String.fromCharCode(0xD83D, 0xDE1C) + " " +  String.fromCharCode(0xD83D, 0xDE1D),
                color: 'blue'}
        break;
     default: return "Something"
   }
 };
 
+function bind_click(i){
+  document.getElementsByClassName("password")[i].onkeyup = function(event){
+    event = event || window.event;
+    var pw = document.getElementsByClassName("password")[i].value;
+    var responseObject = strength(pw);
+
+    document.getElementById("cat-message" + i).innerHTML= responseObject.sentence + "<span id='emoji' style='color:black;font-weight:normal;'>" + responseObject.emoji + "</span>";
+    document.getElementById("cat-message" + i).style.color=responseObject.color;
+  }
+};
+
 var listener = (window.Turbolinks) ? "page:change":"DOMContentLoaded";
 
 document.addEventListener(listener, function(){
-  if (document.getElementById("catpants")) {
-    var para = document.createElement("p");
-    para.setAttribute("id","cat-message");
-    var node = document.createTextNode("");
-    para.appendChild(node);
-    document.getElementById("catpants").appendChild(para);
 
-    document.getElementById("cat-message").style.color="red";
-    document.getElementById("cat-message").style.transition="color 2s";
-    document.getElementById("cat-message").innerHTML = "Your password strength is not good... <span id='emoji' style='color:black;font-weight:normal;'>" + String.fromCharCode(0xD83D, 0xDE1E) + "</span>" ;
 
-    if (document.getElementById("password")) {
-      document.getElementById("password").onkeyup = function(event){
-        event = event || window.event;
-        var pw = document.getElementById("password").value;
-        var responseObject = strength(pw);
+  if (document.getElementsByClassName("catpants")) {
+    var ELEMENTS = document.getElementsByClassName("catpants");
+    for (var i = 0; i < ELEMENTS.length; i++) {
+      var para = document.createElement("p");
+      para.setAttribute("id","cat-message" + i);
+      var node = document.createTextNode("");
+      para.appendChild(node);
+      ELEMENTS[i].appendChild(para);
+      document.getElementById("cat-message" + i).style.color="red";
+      document.getElementById("cat-message" + i).style.transition="color 2s";
+      document.getElementById("cat-message" + i).innerHTML = "Your password strength is not good... <span id='emoji' style='color:black;font-weight:normal;'>" + String.fromCharCode(0xD83D, 0xDE1E) + "</span>" ;
+    };
+    if (document.getElementsByClassName("password")) {
+      var INPUTS = document.getElementsByClassName("password");
+      for (var i = 0; i < INPUTS.length; i++) {
+        bind_click(i);
 
-        document.getElementById("cat-message").innerHTML= responseObject.sentence + "<span id='emoji' style='color:black;font-weight:normal;'>" + responseObject.emoji + "</span>";
-        document.getElementById("cat-message").style.color=responseObject.color;
       }
-    }
-  }
+    };
+  };
 });
 //  bundle exec rake release

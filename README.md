@@ -12,7 +12,7 @@ Add this line to your application's Gemfile:
 ### **** Specify gem version  ****
 
 ```ruby
-gem 'catpants', '2.2.0'
+gem 'catpants', '2.3.0'
 ```
 
 And execute:
@@ -27,24 +27,24 @@ You need to require this in app.js
 //= require catpants
 ```
 
-You must have a html label element for the password field with id of catpants.
+You must have a html label element for the password field with a class of catpants.
 ```html
-<label id="catpants" for="password">
+<label class="catpants">
 ```
-and an id of password on the password input
+and a class of password on the password input
 ```html
-<input type="password" name="password" id="password" value="" class="form-control">
+<input class="password">
 ```
 Here's a RAILS example with form helpers
 ```html
 <div class="form-group">
-  <%= label_tag :password, "Password", id:"catpants" %>
-  <%= password_field_tag :password, "", class: "form-control" %>
+  <%= label_tag :password, "Password", class:"catpants" %>
+  <%= password_field_tag :password, "", class: "password" %>
 </div>
 ```
 RAILS with Simple Form example
 ```erb
-<%= f.input :password, label_html: { id: 'catpants' }, input_html: {id:'password'} %>
+<%= f.input :password, label_html: { class: 'catpants' }, input_html: {class:'password'} %>
 ```
 
 
