@@ -10,7 +10,7 @@ Add this line to your application's Gemfile:
 ### **** Specify gem version  ****
 
 ```ruby
-gem 'catpants', '2.3.0'
+gem 'catpants', '2.5.0'
 ```
 
 And execute:
@@ -25,24 +25,24 @@ You need to require this in app.js
 //= require catpants
 ```
 
-You must have a html label element for the password field with a class of catpants.
+You must have a html label element for the password field with a class of `catpants`.
 ```html
 <label class="catpants">
 ```
-and a class of password on the password input
+And a class of `catpants-password` on the password input
 ```html
-<input class="password">
+<input class="catpants-password">
 ```
 Here's a RAILS example with form helpers
 ```html
 <div class="form-group">
   <%= label_tag :password, "Password", class:"catpants" %>
-  <%= password_field_tag :password, "", class: "password" %>
+  <%= password_field_tag :password, "", class: "catpants-password" %>
 </div>
 ```
 RAILS with Simple Form example
 ```erb
-<%= f.input :password, label_html: { class: 'catpants' }, input_html: {class:'password'} %>
+<%= f.input :password, label_html: { class: 'catpants' }, input_html: {class:'catpants-password'} %>
 ```
 
 

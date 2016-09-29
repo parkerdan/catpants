@@ -55,9 +55,9 @@ function strength(chars) {
 };
 
 function bind_click(i){
-  document.getElementsByClassName("password")[i].onkeyup = function(event){
+  document.getElementsByClassName("catpants-password")[i].onkeyup = function(event){
     event = event || window.event;
-    var pw = document.getElementsByClassName("password")[i].value;
+    var pw = document.getElementsByClassName("catpants-password")[i].value;
     var responseObject = strength(pw);
 
     document.getElementById("cat-message" + i).innerHTML= responseObject.sentence + "<span id='emoji' style='color:black;font-weight:normal;'>" + responseObject.emoji + "</span>";
@@ -82,8 +82,9 @@ document.addEventListener(listener, function(){
       document.getElementById("cat-message" + i).style.transition="color 2s";
       document.getElementById("cat-message" + i).innerHTML = "Your password strength is not good... <span id='emoji' style='color:black;font-weight:normal;'>" + String.fromCharCode(0xD83D, 0xDE1E) + "</span>" ;
     };
-    if (document.getElementsByClassName("password")) {
-      var INPUTS = document.getElementsByClassName("password");
+    if (document.getElementsByClassName("catpants-password")) {
+      var INPUTS = document.getElementsByClassName("catpants-password");
+      console.log(INPUTS);
       for (var i = 0; i < INPUTS.length; i++) {
         bind_click(i);
 
