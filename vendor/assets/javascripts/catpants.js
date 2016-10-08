@@ -84,10 +84,8 @@ document.addEventListener(listener, function(){
     };
     if (document.getElementsByClassName("catpants-password")) {
       var INPUTS = document.getElementsByClassName("catpants-password");
-      console.log(INPUTS);
       for (var i = 0; i < INPUTS.length; i++) {
         bind_click(i);
-
       }
     };
   };
