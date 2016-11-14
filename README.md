@@ -1,4 +1,5 @@
 # Catpants
+<a href="https://rubygems.org/gems/catpants"><img alt="npm version" src="http://img.shields.io/gem/dt/catpants.svg?style=flat-square"></a>
 
 Password strength calculator on key up...with a cat emoji if your password is good enough.
 Everyone needs a strength calculator, everyone loves emoji's.  Win win here!  Vanilla javascript meow 😻!
